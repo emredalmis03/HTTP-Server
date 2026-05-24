@@ -62,3 +62,17 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ghcr.io/${{ github.repository_owner }}/devops-case:${{ github.sha }}
+
+      - name: Deploy to Minikube
+        if: github.ref == 'refs/heads/main'
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ubuntu
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd HTTP-Server
+
+            helm upgrade --install devops-case charts/devops-case \
+              -f charts/devops-case/values-dev.yaml \
+              --set image.tag=latest
