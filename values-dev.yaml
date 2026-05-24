@@ -1,0 +1,23 @@
+replicaCount: 1
+
+image:
+  repository: devops-case
+  tag: v0.1.0
+  pullPolicy: Never
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8000
+  nodePort: 30080
+
+resources:
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 300m
+    memory: 256Mi
+
+env:
+  BUILD_SHA: "local-dev"
