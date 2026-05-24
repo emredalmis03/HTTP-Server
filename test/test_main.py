@@ -1,10 +1,11 @@
-import unittest
+from fastapi.testclient import TestClient
+from app.main import app
+
+client = TestClient(app)
 
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+def test_ping():
+    response = client.get("/ping")
 
-
-if __name__ == '__main__':
-    unittest.main()
+    assert response.status_code == 200
+    assert response.json() == "pong"
