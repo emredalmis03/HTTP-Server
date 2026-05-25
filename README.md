@@ -23,7 +23,7 @@ The system includes:
 
 # Architecture
 
-![Architecture](docs/architecture.png)
+![Architecture](screenshots/devops-architecturev2.png)
 
 Main flow:
 
@@ -86,6 +86,8 @@ Environment-specific values are managed through:
 * `values-dev.yaml`
 * `values-prod.yaml`
 
+![Kubernetes Pods and Rollout](screenshots/minikube.png)
+
 ---
 
 # CI/CD Pipeline
@@ -102,6 +104,8 @@ The GitHub Actions pipeline performs:
 * Automated deployment to Kubernetes via Helm
 
 Deployment is triggered automatically on push to the `main` branch.
+
+![GitHub Actions](screenshots/actions.png)
 
 ---
 
@@ -120,6 +124,8 @@ Metrics are exposed through:
 `/metrics`
 
 A `ServiceMonitor` resource is used for Prometheus scraping.
+
+![Grafana Dashboard](screenshots/grafana_observe.png)
 
 ---
 
@@ -260,19 +266,10 @@ A future improvement would be managing the EC2 instance, Elastic IP, and Securit
 
 ---
 
-# Screenshots
+# Ping Demo
+Demo screenshot of ping
 
-The repository includes or can include the following evidence:
-
-* Grafana dashboard screenshot
-* Grafana alert rule screenshot
-* `kubectl get pods` output
-* `helm list` output
-* `helm history` output
-* `kubectl rollout status` output
-* `/ping` endpoint demo screenshot
-
----
+![Ping Demo](docs/screenshots/ping_test.png)
 
 # Decisions and Tradeoffs
 
