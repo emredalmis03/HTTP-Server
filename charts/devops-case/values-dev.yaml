@@ -1,9 +1,9 @@
 replicaCount: 1
 
 image:
-  repository: devops-case
-  tag: v0.1.5
-  pullPolicy: Never
+  repository: ghcr.io/emredalmis03/devops-case
+  tag: latest
+  pullPolicy: Always
 
 service:
   type: NodePort
