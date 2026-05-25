@@ -188,6 +188,8 @@ Expected response:
 ```text
 "pong"
 ```
+![Ping Demo](screenshots/ping_test.png)
+
 
 ---
 
@@ -266,10 +268,6 @@ A future improvement would be managing the EC2 instance, Elastic IP, and Securit
 
 ---
 
-# Ping Demo
-Demo screenshot of ping
-
-![Ping Demo](docs/screenshots/ping_test.png)
 
 # Decisions and Tradeoffs
 
