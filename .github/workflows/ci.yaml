@@ -52,6 +52,19 @@ jobs:
           exit-code: 1
           severity: CRITICAL
 
+      - name: Generate SBOM with Syft
+        uses: anchore/sbom-action@v0
+        with:
+          image: ghcr.io/${{ github.repository_owner }}/devops-case:${{ github.sha }}
+          format: spdx-json
+          output-file: sbom.spdx.json
+
+      - name: Upload SBOM artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sbom
+          path: sbom.spdx.json
+
       - name: Gitleaks scan
         uses: gitleaks/gitleaks-action@v2
 
