@@ -1,4 +1,4 @@
-# DevOps Case Study
+# HTTP Server - DevOps Case Study
 
 A lightweight FastAPI-based HTTP service deployed on a Kubernetes environment running on AWS EC2 with Helm, GitHub Actions CI/CD, observability tooling, and security-focused DevOps practices.
 
